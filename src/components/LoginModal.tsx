@@ -61,10 +61,13 @@ const LoginModal: FC = () => {
                   <input
                     data-test="input-username"
                     type="text"
-                    placeholder="Your username here... (atuny0)"
+                    placeholder="Your username here...112221 (atuny0)"
                     className="border w-full border-black py-2 px-8 rounded dark:bg-slate-600"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => {
+                      setUsername(e.target.value)
+                      console.log("Username:", e.target.value);
+                    } }
                   />
                   <RiUser3Fill className="absolute top-3 left-2 text-lg" />
                 </div>
@@ -72,7 +75,10 @@ const LoginModal: FC = () => {
                   <input
                     data-test="input-password"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      console.log("password:", e.target.value);
+                    } }
                     type="password"
                     placeholder="Your password here... (9uQFF1Lh)"
                     className="border w-full border-black py-2 px-8 rounded dark:bg-slate-600"
